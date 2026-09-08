@@ -57,9 +57,21 @@ void Board::move_piece(int start_row, int start_col, int final_row, int final_co
 
 bool Board::is_there(int row, int column) const {
 
-    if (row<0 |row>7|column<0|column>7){
+    if (row<0 ||row>7||column<0||column>7){
         return false;
     }
 
     return grid[row][column] != nullptr;
+};
+
+bool Board::can_take(int row, int col, bool is_white) const {
+
+    if (!is_there(row, col)) {
+        return false;
+    }
+
+
+    return grid[row][col]->is_white != is_white;
+
+
 };
