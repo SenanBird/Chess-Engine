@@ -7,7 +7,12 @@
 #include "pieces.hpp"
 
 
-bool Pawn::can_pawn_move(int start_row, int start_col, const Board& board){
+bool Pawn::can_pawn_move_forward(int start_row, int start_col, const Board& board){
+
+    if(is_pinned){
+        std::cout << "Can't move as pawn is pinned.\n";
+        return false;
+    }
 
     int forward_direction = is_white ? -1 : 1;
 
@@ -20,6 +25,12 @@ bool Pawn::can_pawn_move(int start_row, int start_col, const Board& board){
 };
 
 void Pawn::pawn_move(int start_row, int start_col, Board& board){
+
+    if(is_pinned){
+        std::cout << "Can't move as pawn is pinned.\n";
+        return;
+    }
+
     int forward_direction = is_white ? -1 : 1;
 
     board.move_piece(start_row, start_col, start_row+forward_direction, start_col);
@@ -28,14 +39,15 @@ void Pawn::pawn_move(int start_row, int start_col, Board& board){
 };
 
 
-std::vector<Move> Pawn::all_pawn_moves_possible(int start_row, int start_col, Board& board){
+std::vector<Move> Pawn::all_pawn_moves_possible(int start_row, int start_col, const Board& board){
 
     std::vector<Move> all_moves;
 
     int forward_direction = is_white ? -1 : 1;
 
-    if(Pawn::can_pawn_move( start_row, start_col, board)){
-        all_moves.push_back({start_row+forward_direction, start_col});
+    if(Pawn::can_pawn_move_forward(start_row, start_col, board)){
+
+        all_moves.push_back({start_row+forward_direction, start_col,board.can_take(start_row+forward_direction, start_col, is_white)});
     }
 
     // for the right side

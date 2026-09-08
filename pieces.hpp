@@ -9,7 +9,7 @@
 class Piece{
 public: 
     std::string name;
-    char symbol;         
+    std::string symbol;         
     bool is_white;       
     bool is_pinned = false; 
 
@@ -22,6 +22,7 @@ public:
 struct Move {
     int final_row;
     int final_col;
+    bool can_take_piece;
 };
 
 
@@ -31,10 +32,11 @@ private:
 public:
     Board();
     void print_board();
-    bool is_there(int row, int column) const;
+    bool is_there(int row, int col) const;
     void set_start_pieces();
     void move_piece(int start_row, int start_col, int final_row, int final_col);
     bool can_take(int row, int col, bool is_white) const;
+    bool out_of_bounds(int row, int col) const;
 
 };
 
@@ -43,15 +45,15 @@ public:
     Pawn(bool white) {
         name = "Pawn";
         is_white = white;
-        symbol = white ? 'P' : 'p';
+        symbol = white ? "wP" : "bp";
         is_pinned = false;
     }
 
-    bool can_pawn_move(int start_row, int start_col, const Board& board);
+    bool can_pawn_move_forward(int start_row, int start_col, const Board& board);
 
     void pawn_move(int start_row, int start_col, Board& board);
 
-    std::vector<Move> all_pawn_moves_possible(int start_row, int start_col, Board& board);
+    std::vector<Move> all_pawn_moves_possible(int start_row, int start_col,  const Board& board);
 };
 
 
@@ -60,12 +62,13 @@ public:
     King(bool white) {
         name = "King";
         is_white = white;
-        symbol = white ? 'K' : 'k';
+        symbol = white ? "wK" : "bk";
     }
 
-    bool can_King_move(int start_row, int start_col, const Board& board);
 
-    void pawn_King(int start_row, int start_col, bool is_white, Board& board);
+    void king_move(int start_row, int start_col, int final_row, int final_col, Board& board);
+
+    std::vector<Move> all_king_moves_possible(int start_row, int start_col, const Board& board);
 };
 
 
