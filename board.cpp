@@ -50,8 +50,16 @@ void Board::set_start_pieces(){
     // White King (row 7, col 4)
     grid[7][4]=std::make_unique<King>(true);
 
-    // black King (row 0, col 3)
+    // Black King (row 0, col 3)
     grid[0][4]=std::make_unique<King>(false);
+
+    //White Rook (row 7, col 0 and col 7)
+    grid[7][0]=std::make_unique<Rook>(true);
+    grid[7][7]=std::make_unique<Rook>(true);
+
+    //Black Rook (row 0, col 0 and col 7)
+    grid[0][0]=std::make_unique<Rook>(false);
+    grid[0][7]=std::make_unique<Rook>(false);
 
 
 
@@ -93,3 +101,14 @@ bool Board:: out_of_bounds(int row, int col) const {
 
     return false;
 };
+
+
+Piece* Board::get_piece(int row, int col, const Board& board) const{
+    if (row<0 ||row>7||col<0||col>7){
+        return nullptr;
+    } else{
+        return grid[row][col].get();
+    }
+}
+
+

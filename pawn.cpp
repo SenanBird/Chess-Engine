@@ -41,7 +41,12 @@ void Pawn::pawn_move(int start_row, int start_col, Board& board){
 
 std::vector<Move> Pawn::all_pawn_moves_possible(int start_row, int start_col, const Board& board){
 
+
     std::vector<Move> all_moves;
+
+    if(is_pinned){
+        return all_moves;
+    }
 
     int forward_direction = is_white ? -1 : 1;
 

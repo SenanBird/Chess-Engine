@@ -37,6 +37,7 @@ public:
     void move_piece(int start_row, int start_col, int final_row, int final_col);
     bool can_take(int row, int col, bool is_white) const;
     bool out_of_bounds(int row, int col) const;
+    Piece* get_piece(int row, int col, const Board& board) const;
 
 };
 
@@ -45,7 +46,7 @@ public:
     Pawn(bool white) {
         name = "Pawn";
         is_white = white;
-        symbol = white ? "wP" : "bp";
+        symbol = white ? "wP" : "bP";
         is_pinned = false;
     }
 
@@ -62,13 +63,28 @@ public:
     King(bool white) {
         name = "King";
         is_white = white;
-        symbol = white ? "wK" : "bk";
+        symbol = white ? "wK" : "bK";
     }
 
 
     void king_move(int start_row, int start_col, int final_row, int final_col, Board& board);
 
     std::vector<Move> all_king_moves_possible(int start_row, int start_col, const Board& board);
+};
+
+
+class Rook : public Piece {
+public:
+    Rook(bool white) {
+        name = "Rook";
+        is_white = white;
+        symbol = white ? "wR" : "bR";
+    }
+
+
+    void Rook_move(int start_row, int start_col, int final_row, int final_col, Board& board);
+
+    std::vector<Move> all_rook_moves_possible(int start_row, int start_col,  const Board& board);
 };
 
 

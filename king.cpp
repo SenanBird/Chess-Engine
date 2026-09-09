@@ -31,7 +31,7 @@ void King::king_move(int start_row, int start_col, int final_row, int final_col,
     }
 
 
-    std::cout << "This move is not possible";
+    std::cout << "This move is not possible\n";
     
 
 
