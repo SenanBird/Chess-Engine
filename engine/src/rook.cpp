@@ -25,6 +25,18 @@ void Rook::Rook_move(int start_row, int start_col, int final_row, int final_col,
 
         
         if(move.final_row == final_row && move.final_col == final_col){
+
+            // The opposing king is never a capture target.
+            if (board.is_king_here(final_row, final_col, is_white)) {
+                std::cout << "You cannot capture the opposing king.\n";
+                return;
+            }
+
+            // Try the move first to see whether our own king would be exposed.
+            if (board.leaves_king_in_check(start_row, start_col, final_row, final_col)) {
+                std::cout << "This move would leave your king in check.\n";
+                return;
+            }
             
             board.move_piece(start_row, start_col, final_row, final_col);
 
@@ -138,4 +150,29 @@ std::vector<Move> Rook::all_rook_moves_possible(int start_row, int start_col, co
 
     return all_moves;
     
+}
+
+
+bool Rook::pointed_at_opposing_king(
+    int start_row, int start_col, const Board& board) {
+    const int directions[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+
+    for (const auto& direction : directions) {
+        int row = start_row + direction[0];
+        int col = start_col + direction[1];
+
+        while (!board.out_of_bounds(row, col)) {
+            if (board.is_there(row, col)) {
+                if (board.is_king_here(row, col, is_white)) {
+                    return true;
+                }
+                break;
+            }
+
+            row += direction[0];
+            col += direction[1];
+        }
+    }
+
+    return false;
 }

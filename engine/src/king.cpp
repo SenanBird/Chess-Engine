@@ -42,7 +42,7 @@ void King::king_move(int start_row, int start_col, int final_row, int final_col,
 std::vector<Move> King::all_king_moves_possible(int start_row, int start_col, const Board& board){
      std::vector<Move> all_moves;
 
-     int forward_direction = is_white ? -1 : 1;
+     
 
 
      for(int i=-1;i<2;i++){
