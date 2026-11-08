@@ -1,4 +1,4 @@
-set(__QT_DEPLOY_TARGETS "chess_engine;chess_gui;castling_test;draw_test;move_count_test;random_rules_test")
+set(__QT_DEPLOY_TARGETS "chess_engine;chess_gui;castling_test;draw_test;move_count_test;random_rules_test;ai_test")
 set(__QT_DEPLOY_TARGET_chess_engine_FILE /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/libchess_engine.a)
 set(__QT_DEPLOY_TARGET_chess_engine_TYPE STATIC_LIBRARY)
 set(__QT_DEPLOY_TARGET_chess_gui_FILE /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/chess_gui)
@@ -11,3 +11,5 @@ set(__QT_DEPLOY_TARGET_move_count_test_FILE /mnt/4tb_games/Projects/Chess_Machin
 set(__QT_DEPLOY_TARGET_move_count_test_TYPE EXECUTABLE)
 set(__QT_DEPLOY_TARGET_random_rules_test_FILE /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/random_rules_test)
 set(__QT_DEPLOY_TARGET_random_rules_test_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_ai_test_FILE /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/ai_test)
+set(__QT_DEPLOY_TARGET_ai_test_TYPE EXECUTABLE)

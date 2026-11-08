@@ -1,8 +1,12 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/chess_engine.dir/src/ai.cpp.o"
+  "CMakeFiles/chess_engine.dir/src/ai.cpp.o.d"
   "CMakeFiles/chess_engine.dir/src/bishop.cpp.o"
   "CMakeFiles/chess_engine.dir/src/bishop.cpp.o.d"
   "CMakeFiles/chess_engine.dir/src/board.cpp.o"
   "CMakeFiles/chess_engine.dir/src/board.cpp.o.d"
+  "CMakeFiles/chess_engine.dir/src/board_copy.cpp.o"
+  "CMakeFiles/chess_engine.dir/src/board_copy.cpp.o.d"
   "CMakeFiles/chess_engine.dir/src/castling.cpp.o"
   "CMakeFiles/chess_engine.dir/src/castling.cpp.o.d"
   "CMakeFiles/chess_engine.dir/src/draw.cpp.o"

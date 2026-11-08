@@ -568,6 +568,19 @@ random_rules_test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/random_rules_test.dir/build.make CMakeFiles/random_rules_test.dir/build
 .PHONY : random_rules_test/fast
 
+#=============================================================================
+# Target rules for targets named ai_test
+
+# Build rule for target.
+ai_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ai_test
+.PHONY : ai_test
+
+# fast build rule for target.
+ai_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ai_test.dir/build.make CMakeFiles/ai_test.dir/build
+.PHONY : ai_test/fast
+
 gui/main.o: gui/main.cpp.o
 .PHONY : gui/main.o
 
@@ -591,6 +604,54 @@ gui/main.s: gui/main.cpp.s
 gui/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_gui.dir/build.make CMakeFiles/chess_gui.dir/gui/main.cpp.s
 .PHONY : gui/main.cpp.s
+
+src/ai.o: src/ai.cpp.o
+.PHONY : src/ai.o
+
+# target to build an object file
+src/ai.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_engine.dir/build.make CMakeFiles/chess_engine.dir/src/ai.cpp.o
+.PHONY : src/ai.cpp.o
+
+src/ai.i: src/ai.cpp.i
+.PHONY : src/ai.i
+
+# target to preprocess a source file
+src/ai.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_engine.dir/build.make CMakeFiles/chess_engine.dir/src/ai.cpp.i
+.PHONY : src/ai.cpp.i
+
+src/ai.s: src/ai.cpp.s
+.PHONY : src/ai.s
+
+# target to generate assembly for a file
+src/ai.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_engine.dir/build.make CMakeFiles/chess_engine.dir/src/ai.cpp.s
+.PHONY : src/ai.cpp.s
+
+src/ai_test.o: src/ai_test.cpp.o
+.PHONY : src/ai_test.o
+
+# target to build an object file
+src/ai_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ai_test.dir/build.make CMakeFiles/ai_test.dir/src/ai_test.cpp.o
+.PHONY : src/ai_test.cpp.o
+
+src/ai_test.i: src/ai_test.cpp.i
+.PHONY : src/ai_test.i
+
+# target to preprocess a source file
+src/ai_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ai_test.dir/build.make CMakeFiles/ai_test.dir/src/ai_test.cpp.i
+.PHONY : src/ai_test.cpp.i
+
+src/ai_test.s: src/ai_test.cpp.s
+.PHONY : src/ai_test.s
+
+# target to generate assembly for a file
+src/ai_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ai_test.dir/build.make CMakeFiles/ai_test.dir/src/ai_test.cpp.s
+.PHONY : src/ai_test.cpp.s
 
 src/bishop.o: src/bishop.cpp.o
 .PHONY : src/bishop.o
@@ -639,6 +700,30 @@ src/board.s: src/board.cpp.s
 src/board.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_engine.dir/build.make CMakeFiles/chess_engine.dir/src/board.cpp.s
 .PHONY : src/board.cpp.s
+
+src/board_copy.o: src/board_copy.cpp.o
+.PHONY : src/board_copy.o
+
+# target to build an object file
+src/board_copy.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_engine.dir/build.make CMakeFiles/chess_engine.dir/src/board_copy.cpp.o
+.PHONY : src/board_copy.cpp.o
+
+src/board_copy.i: src/board_copy.cpp.i
+.PHONY : src/board_copy.i
+
+# target to preprocess a source file
+src/board_copy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_engine.dir/build.make CMakeFiles/chess_engine.dir/src/board_copy.cpp.i
+.PHONY : src/board_copy.cpp.i
+
+src/board_copy.s: src/board_copy.cpp.s
+.PHONY : src/board_copy.s
+
+# target to generate assembly for a file
+src/board_copy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_engine.dir/build.make CMakeFiles/chess_engine.dir/src/board_copy.cpp.s
+.PHONY : src/board_copy.cpp.s
 
 src/castling.o: src/castling.cpp.o
 .PHONY : src/castling.o
@@ -989,6 +1074,7 @@ help:
 	@echo "... NightlySubmit"
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
+	@echo "... ai_test"
 	@echo "... castling_test"
 	@echo "... chess_engine"
 	@echo "... chess_gui"
@@ -998,12 +1084,21 @@ help:
 	@echo "... gui/main.o"
 	@echo "... gui/main.i"
 	@echo "... gui/main.s"
+	@echo "... src/ai.o"
+	@echo "... src/ai.i"
+	@echo "... src/ai.s"
+	@echo "... src/ai_test.o"
+	@echo "... src/ai_test.i"
+	@echo "... src/ai_test.s"
 	@echo "... src/bishop.o"
 	@echo "... src/bishop.i"
 	@echo "... src/bishop.s"
 	@echo "... src/board.o"
 	@echo "... src/board.i"
 	@echo "... src/board.s"
+	@echo "... src/board_copy.o"
+	@echo "... src/board_copy.i"
+	@echo "... src/board_copy.s"
 	@echo "... src/castling.o"
 	@echo "... src/castling.i"
 	@echo "... src/castling.s"

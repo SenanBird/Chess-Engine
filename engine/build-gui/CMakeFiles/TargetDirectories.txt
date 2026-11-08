@@ -32,6 +32,7 @@
 /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles/draw_test.dir
 /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles/move_count_test.dir
 /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles/random_rules_test.dir
+/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles/ai_test.dir
 /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles/test.dir
 /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles/edit_cache.dir
 /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles/rebuild_cache.dir

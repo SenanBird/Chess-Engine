@@ -8,8 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/ai.cpp" "CMakeFiles/chess_engine.dir/src/ai.cpp.o" "gcc" "CMakeFiles/chess_engine.dir/src/ai.cpp.o.d"
   "/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/bishop.cpp" "CMakeFiles/chess_engine.dir/src/bishop.cpp.o" "gcc" "CMakeFiles/chess_engine.dir/src/bishop.cpp.o.d"
   "/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/board.cpp" "CMakeFiles/chess_engine.dir/src/board.cpp.o" "gcc" "CMakeFiles/chess_engine.dir/src/board.cpp.o.d"
+  "/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/board_copy.cpp" "CMakeFiles/chess_engine.dir/src/board_copy.cpp.o" "gcc" "CMakeFiles/chess_engine.dir/src/board_copy.cpp.o.d"
   "/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/castling.cpp" "CMakeFiles/chess_engine.dir/src/castling.cpp.o" "gcc" "CMakeFiles/chess_engine.dir/src/castling.cpp.o.d"
   "/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/draw.cpp" "CMakeFiles/chess_engine.dir/src/draw.cpp.o" "gcc" "CMakeFiles/chess_engine.dir/src/draw.cpp.o.d"
   "/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/game.cpp" "CMakeFiles/chess_engine.dir/src/game.cpp.o" "gcc" "CMakeFiles/chess_engine.dir/src/game.cpp.o.d"

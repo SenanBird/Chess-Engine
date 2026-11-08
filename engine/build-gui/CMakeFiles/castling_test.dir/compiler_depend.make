@@ -34,7 +34,9 @@ CMakeFiles/castling_test.dir/tests/castling_test.cpp.o: /mnt/4tb_games/Projects/
   /usr/include/bits/select.h \
   /usr/include/bits/setjmp.h \
   /usr/include/bits/stdint-intn.h \
+  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
+  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -273,6 +275,10 @@ castling_test: /usr/lib/Scrt1.o \
 
 /usr/lib/libc_nonshared.a:
 
+/usr/lib/ld-linux-x86-64.so.2:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/16/libstdc++.so:
+
 /usr/include/c++/16/bits/ptr_traits.h:
 
 /usr/include/c++/16/bits/ostream_print.h:
@@ -336,8 +342,6 @@ castling_test: /usr/lib/Scrt1.o \
 /usr/include/c++/16/bits/atomic_wait.h:
 
 /usr/include/c++/16/bits/atomic_base.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/16/libstdc++.so:
 
 /usr/include/c++/16/bits/memoryfwd.h:
 
@@ -435,8 +439,6 @@ castling_test: /usr/lib/Scrt1.o \
 
 /usr/include/assert.h:
 
-/usr/lib/ld-linux-x86-64.so.2:
-
 /usr/include/c++/16/cstdlib:
 
 /usr/include/bits/errno.h:
@@ -452,6 +454,18 @@ castling_test: /usr/lib/Scrt1.o \
 /usr/include/bits/pthread_stack_min-dynamic.h:
 
 /usr/include/c++/16/bits/functional_hash.h:
+
+/usr/include/bits/types/struct_FILE.h:
+
+/usr/include/c++/16/bits/stdexcept_except.h:
+
+/usr/include/c++/16/bits/new_throw.h:
+
+/usr/include/c++/16/ext/atomicity.h:
+
+/usr/include/asm/types.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/16/libgcc_s.so:
 
 /usr/include/alloca.h:
 
@@ -527,6 +541,16 @@ castling_test: /usr/lib/Scrt1.o \
 
 /usr/include/bits/setjmp.h:
 
+/usr/include/bits/stdio.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/stdio.h:
+
+/usr/include/c++/16/stdexcept:
+
+/usr/include/bits/stdlib-bsearch.h:
+
 /usr/include/gnu/stubs.h:
 
 /usr/include/c++/16/bits/std_abs.h:
@@ -555,33 +579,21 @@ castling_test: /usr/lib/Scrt1.o \
 
 /usr/include/bits/types.h:
 
+/usr/include/bits/types/__locale_t.h:
+
+/usr/include/bits/stdint-intn.h:
+
+/usr/include/bits/types/clockid_t.h:
+
 /usr/include/c++/16/bits/range_access.h:
 
 /usr/lib/crtn.o:
-
-/usr/include/bits/types/__locale_t.h:
 
 CMakeFiles/castling_test.dir/tests/castling_test.cpp.o:
 
 /usr/include/sys/types.h:
 
 /usr/include/c++/16/bits/ranges_algobase.h:
-
-/usr/include/bits/stdint-intn.h:
-
-/usr/include/bits/types/clockid_t.h:
-
-/usr/include/asm/types.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/16/libgcc_s.so:
-
-/usr/include/bits/types/struct_FILE.h:
-
-/usr/include/c++/16/bits/stdexcept_except.h:
-
-/usr/include/c++/16/bits/new_throw.h:
-
-/usr/include/c++/16/ext/atomicity.h:
 
 /usr/include/c++/16/bits/ranges_base.h:
 
@@ -724,12 +736,6 @@ CMakeFiles/castling_test.dir/tests/castling_test.cpp.o:
 /usr/include/bits/types/struct_timeval.h:
 
 /usr/include/c++/16/ostream:
-
-/usr/include/bits/wordsize.h:
-
-/usr/include/stdio.h:
-
-/usr/include/c++/16/stdexcept:
 
 libchess_engine.a:
 

@@ -25,7 +25,7 @@ CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=Debug
+CMAKE_BUILD_TYPE:STRING=Release
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -176,7 +176,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=ChessEngine
+CMAKE_PROJECT_NAME:STATIC=ZergChess
 
 //Value Computed by CMake
 CMAKE_PROJECT_SPDX_LICENSE:STATIC=
@@ -367,6 +367,18 @@ Vulkan_INCLUDE_DIR:PATH=Vulkan_INCLUDE_DIR-NOTFOUND
 
 //Path to a library.
 Vulkan_LIBRARY:FILEPATH=/usr/lib/libvulkan.so
+
+//Build the Qt desktop application
+ZERGCHESS_BUILD_GUI:BOOL=ON
+
+//Value Computed by CMake
+ZergChess_BINARY_DIR:STATIC=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui
+
+//Value Computed by CMake
+ZergChess_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+ZergChess_SOURCE_DIR:STATIC=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine
 
 
 ########################

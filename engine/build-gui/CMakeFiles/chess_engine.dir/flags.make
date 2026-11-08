@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/include
 
-CXX_FLAGS = -g
+CXX_FLAGS = -O3 -DNDEBUG
 

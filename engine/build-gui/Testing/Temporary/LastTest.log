@@ -1,10 +1,10 @@
-Start testing: Nov 08 17:28 CET
+Start testing: Nov 09 00:03 CET
 ----------------------------------------------------------
-1/4 Testing: castling_test
-1/4 Test: castling_test
+1/5 Testing: castling_test
+1/5 Test: castling_test
 Command: "/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/castling_test"
 Directory: /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui
-"castling_test" start time: Nov 08 17:28 CET
+"castling_test" start time: Nov 09 00:03 CET
 Output:
 ----------------------------------------------------------
 Castling tests passed.
@@ -12,15 +12,15 @@ Castling tests passed.
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"castling_test" end time: Nov 08 17:28 CET
+"castling_test" end time: Nov 09 00:03 CET
 "castling_test" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/4 Testing: draw_test
-2/4 Test: draw_test
+2/5 Testing: draw_test
+2/5 Test: draw_test
 Command: "/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/draw_test"
 Directory: /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui
-"draw_test" start time: Nov 08 17:28 CET
+"draw_test" start time: Nov 09 00:03 CET
 Output:
 ----------------------------------------------------------
 Material and board reset tests passed.
@@ -28,15 +28,15 @@ Material and board reset tests passed.
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"draw_test" end time: Nov 08 17:28 CET
+"draw_test" end time: Nov 09 00:03 CET
 "draw_test" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/4 Testing: move_count_test
-3/4 Test: move_count_test
+3/5 Testing: move_count_test
+3/5 Test: move_count_test
 Command: "/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/move_count_test"
 Directory: /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui
-"move_count_test" start time: Nov 08 17:28 CET
+"move_count_test" start time: Nov 09 00:03 CET
 Output:
 ----------------------------------------------------------
 75-move threshold and reset tests passed.
@@ -44,24 +44,42 @@ Output:
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"move_count_test" end time: Nov 08 17:28 CET
+"move_count_test" end time: Nov 09 00:03 CET
 "move_count_test" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-4/4 Testing: random_rules_test
-4/4 Test: random_rules_test
+4/5 Testing: random_rules_test
+4/5 Test: random_rules_test
 Command: "/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/random_rules_test"
 Directory: /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui
-"random_rules_test" start time: Nov 08 17:28 CET
+"random_rules_test" start time: Nov 09 00:03 CET
 Output:
 ----------------------------------------------------------
 Random rules test passed: 20 games; 7 completed; 13 reached the test limit.
 <end of output>
-Test time =   1.71 sec
+Test time =   0.27 sec
 ----------------------------------------------------------
 Test Passed.
-"random_rules_test" end time: Nov 08 17:28 CET
-"random_rules_test" time elapsed: 00:00:01
+"random_rules_test" end time: Nov 09 00:03 CET
+"random_rules_test" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Nov 08 17:28 CET
+5/5 Testing: ai_test
+5/5 Test: ai_test
+Command: "/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/ai_test"
+Directory: /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui
+"ai_test" start time: Nov 09 00:03 CET
+Output:
+----------------------------------------------------------
+AI tests passed.
+Serial alpha-beta: 90 nodes, 1 ms
+Parallel alpha-beta: 90 nodes, 0 ms
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ai_test" end time: Nov 09 00:03 CET
+"ai_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 09 00:03 CET

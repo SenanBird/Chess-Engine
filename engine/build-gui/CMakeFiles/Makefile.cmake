@@ -472,4 +472,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/draw_test.dir/DependInfo.cmake"
   "CMakeFiles/move_count_test.dir/DependInfo.cmake"
   "CMakeFiles/random_rules_test.dir/DependInfo.cmake"
+  "CMakeFiles/ai_test.dir/DependInfo.cmake"
   )

@@ -74,6 +74,7 @@
   libchess_engine.a
 
 CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/gui/main.cpp \
+  /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/include/ai.hpp \
   /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/include/game.hpp \
   /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/include/history.hpp \
   /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/include/pieces.hpp \
@@ -180,7 +181,9 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
   /usr/include/c++/16/bits/allocated_ptr.h \
   /usr/include/c++/16/bits/allocator.h \
   /usr/include/c++/16/bits/atomic_base.h \
+  /usr/include/c++/16/bits/atomic_futex.h \
   /usr/include/c++/16/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/16/bits/atomic_timed_wait.h \
   /usr/include/c++/16/bits/atomic_wait.h \
   /usr/include/c++/16/bits/basic_ios.h \
   /usr/include/c++/16/bits/basic_ios.tcc \
@@ -256,6 +259,7 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
   /usr/include/c++/16/bits/ranges_util.h \
   /usr/include/c++/16/bits/refwrap.h \
   /usr/include/c++/16/bits/requires_hosted.h \
+  /usr/include/c++/16/bits/semaphore_base.h \
   /usr/include/c++/16/bits/shared_ptr.h \
   /usr/include/c++/16/bits/shared_ptr_atomic.h \
   /usr/include/c++/16/bits/shared_ptr_base.h \
@@ -263,6 +267,8 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
   /usr/include/c++/16/bits/sstream.tcc \
   /usr/include/c++/16/bits/std_abs.h \
   /usr/include/c++/16/bits/std_function.h \
+  /usr/include/c++/16/bits/std_mutex.h \
+  /usr/include/c++/16/bits/std_thread.h \
   /usr/include/c++/16/bits/stdexcept_except.h \
   /usr/include/c++/16/bits/stdexcept_throw.h \
   /usr/include/c++/16/bits/stdexcept_throwfwd.h \
@@ -293,9 +299,11 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
   /usr/include/c++/16/bits/streambuf_iterator.h \
   /usr/include/c++/16/bits/string_view.tcc \
   /usr/include/c++/16/bits/stringfwd.h \
+  /usr/include/c++/16/bits/this_thread_sleep.h \
   /usr/include/c++/16/bits/unicode-data.h \
   /usr/include/c++/16/bits/unicode.h \
   /usr/include/c++/16/bits/uniform_int_dist.h \
+  /usr/include/c++/16/bits/unique_lock.h \
   /usr/include/c++/16/bits/unique_ptr.h \
   /usr/include/c++/16/bits/unordered_map.h \
   /usr/include/c++/16/bits/unordered_set.h \
@@ -315,6 +323,7 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
   /usr/include/c++/16/codecvt \
   /usr/include/c++/16/compare \
   /usr/include/c++/16/concepts \
+  /usr/include/c++/16/condition_variable \
   /usr/include/c++/16/cstddef \
   /usr/include/c++/16/cstdint \
   /usr/include/c++/16/cstdio \
@@ -337,6 +346,7 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
   /usr/include/c++/16/format \
   /usr/include/c++/16/fstream \
   /usr/include/c++/16/functional \
+  /usr/include/c++/16/future \
   /usr/include/c++/16/initializer_list \
   /usr/include/c++/16/iomanip \
   /usr/include/c++/16/ios \
@@ -348,6 +358,7 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
   /usr/include/c++/16/locale \
   /usr/include/c++/16/map \
   /usr/include/c++/16/memory \
+  /usr/include/c++/16/mutex \
   /usr/include/c++/16/new \
   /usr/include/c++/16/numbers \
   /usr/include/c++/16/numeric \
@@ -361,11 +372,13 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
   /usr/include/c++/16/random \
   /usr/include/c++/16/ranges \
   /usr/include/c++/16/ratio \
+  /usr/include/c++/16/semaphore \
   /usr/include/c++/16/set \
   /usr/include/c++/16/span \
   /usr/include/c++/16/sstream \
   /usr/include/c++/16/stdexcept \
   /usr/include/c++/16/stdlib.h \
+  /usr/include/c++/16/stop_token \
   /usr/include/c++/16/streambuf \
   /usr/include/c++/16/string \
   /usr/include/c++/16/string_view \
@@ -426,9 +439,15 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
   /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/qt6/QtCore/QDir \
+  /usr/include/qt6/QtCore/QEvent \
   /usr/include/qt6/QtCore/QFileInfo \
+  /usr/include/qt6/QtCore/QList \
   /usr/include/qt6/QtCore/QLockFile \
+  /usr/include/qt6/QtCore/QObject \
+  /usr/include/qt6/QtCore/QRect \
   /usr/include/qt6/QtCore/QSignalBlocker \
+  /usr/include/qt6/QtCore/QSize \
+  /usr/include/qt6/QtCore/QSizeF \
   /usr/include/qt6/QtCore/QStringList \
   /usr/include/qt6/QtCore/QTimer \
   /usr/include/qt6/QtCore/q17memory.h \
@@ -584,11 +603,19 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
   /usr/include/qt6/QtCore/qxptype_traits.h \
   /usr/include/qt6/QtCore/qyieldcpu.h \
   /usr/include/qt6/QtGui/QIcon \
+  /usr/include/qt6/QtGui/QMouseEvent \
+  /usr/include/qt6/QtGui/QPainter \
+  /usr/include/qt6/QtGui/QPainterPath \
+  /usr/include/qt6/QtGui/QPolygonF \
+  /usr/include/qt6/QtGui/QResizeEvent \
+  /usr/include/qt6/QtGui/QTransform \
   /usr/include/qt6/QtGui/qaction.h \
   /usr/include/qt6/QtGui/qbitmap.h \
   /usr/include/qt6/QtGui/qbrush.h \
   /usr/include/qt6/QtGui/qcolor.h \
   /usr/include/qt6/QtGui/qcursor.h \
+  /usr/include/qt6/QtGui/qevent.h \
+  /usr/include/qt6/QtGui/qeventpoint.h \
   /usr/include/qt6/QtGui/qfont.h \
   /usr/include/qt6/QtGui/qfontinfo.h \
   /usr/include/qt6/QtGui/qfontmetrics.h \
@@ -597,18 +624,24 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
   /usr/include/qt6/QtGui/qguiapplication_platform.h \
   /usr/include/qt6/QtGui/qicon.h \
   /usr/include/qt6/QtGui/qimage.h \
+  /usr/include/qt6/QtGui/qinputdevice.h \
   /usr/include/qt6/QtGui/qinputmethod.h \
   /usr/include/qt6/QtGui/qkeysequence.h \
   /usr/include/qt6/QtGui/qpaintdevice.h \
+  /usr/include/qt6/QtGui/qpainter.h \
+  /usr/include/qt6/QtGui/qpainterpath.h \
   /usr/include/qt6/QtGui/qpalette.h \
   /usr/include/qt6/QtGui/qpen.h \
   /usr/include/qt6/QtGui/qpicture.h \
   /usr/include/qt6/QtGui/qpixelformat.h \
   /usr/include/qt6/QtGui/qpixmap.h \
+  /usr/include/qt6/QtGui/qpointingdevice.h \
   /usr/include/qt6/QtGui/qpolygon.h \
   /usr/include/qt6/QtGui/qregion.h \
   /usr/include/qt6/QtGui/qrgb.h \
   /usr/include/qt6/QtGui/qrgba64.h \
+  /usr/include/qt6/QtGui/qscreen.h \
+  /usr/include/qt6/QtGui/qscreen_platform.h \
   /usr/include/qt6/QtGui/qtextcursor.h \
   /usr/include/qt6/QtGui/qtextdocument.h \
   /usr/include/qt6/QtGui/qtextformat.h \
@@ -618,16 +651,24 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
   /usr/include/qt6/QtGui/qtguiglobal.h \
   /usr/include/qt6/QtGui/qtransform.h \
   /usr/include/qt6/QtGui/qvalidator.h \
+  /usr/include/qt6/QtGui/qvector2d.h \
+  /usr/include/qt6/QtGui/qvectornd.h \
   /usr/include/qt6/QtGui/qwindowdefs.h \
   /usr/include/qt6/QtWidgets/QApplication \
+  /usr/include/qt6/QtWidgets/QCheckBox \
   /usr/include/qt6/QtWidgets/QComboBox \
+  /usr/include/qt6/QtWidgets/QDialog \
+  /usr/include/qt6/QtWidgets/QDialogButtonBox \
+  /usr/include/qt6/QtWidgets/QFormLayout \
   /usr/include/qt6/QtWidgets/QGridLayout \
   /usr/include/qt6/QtWidgets/QHBoxLayout \
   /usr/include/qt6/QtWidgets/QInputDialog \
   /usr/include/qt6/QtWidgets/QLabel \
+  /usr/include/qt6/QtWidgets/QLayout \
   /usr/include/qt6/QtWidgets/QLineEdit \
   /usr/include/qt6/QtWidgets/QMessageBox \
   /usr/include/qt6/QtWidgets/QPushButton \
+  /usr/include/qt6/QtWidgets/QSpinBox \
   /usr/include/qt6/QtWidgets/QVBoxLayout \
   /usr/include/qt6/QtWidgets/QWidget \
   /usr/include/qt6/QtWidgets/qabstractbutton.h \
@@ -636,9 +677,11 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
   /usr/include/qt6/QtWidgets/qabstractspinbox.h \
   /usr/include/qt6/QtWidgets/qapplication.h \
   /usr/include/qt6/QtWidgets/qboxlayout.h \
+  /usr/include/qt6/QtWidgets/qcheckbox.h \
   /usr/include/qt6/QtWidgets/qcombobox.h \
   /usr/include/qt6/QtWidgets/qdialog.h \
   /usr/include/qt6/QtWidgets/qdialogbuttonbox.h \
+  /usr/include/qt6/QtWidgets/qformlayout.h \
   /usr/include/qt6/QtWidgets/qframe.h \
   /usr/include/qt6/QtWidgets/qgridlayout.h \
   /usr/include/qt6/QtWidgets/qinputdialog.h \
@@ -651,6 +694,7 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
   /usr/include/qt6/QtWidgets/qrubberband.h \
   /usr/include/qt6/QtWidgets/qsizepolicy.h \
   /usr/include/qt6/QtWidgets/qslider.h \
+  /usr/include/qt6/QtWidgets/qspinbox.h \
   /usr/include/qt6/QtWidgets/qstyle.h \
   /usr/include/qt6/QtWidgets/qstyleoption.h \
   /usr/include/qt6/QtWidgets/qtabbar.h \
@@ -669,6 +713,7 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
   /usr/include/sys/cdefs.h \
   /usr/include/sys/select.h \
   /usr/include/sys/single_threaded.h \
+  /usr/include/sys/time.h \
   /usr/include/sys/types.h \
   /usr/include/time.h \
   /usr/include/wchar.h \
@@ -686,6 +731,8 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
 /usr/include/wctype.h:
 
 /usr/include/wchar.h:
+
+/usr/include/sys/time.h:
 
 /usr/include/sys/select.h:
 
@@ -706,6 +753,8 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
 /usr/include/qt6/QtWidgets/qstyleoption.h:
 
 /usr/include/qt6/QtWidgets/qstyle.h:
+
+/usr/include/qt6/QtWidgets/qspinbox.h:
 
 /usr/include/qt6/QtWidgets/qsizepolicy.h:
 
@@ -737,25 +786,29 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
 
 /usr/include/qt6/QtWidgets/QWidget:
 
+/usr/include/qt6/QtWidgets/QSpinBox:
+
 /usr/include/qt6/QtWidgets/QPushButton:
 
 /usr/include/qt6/QtWidgets/QMessageBox:
-
-/usr/include/qt6/QtWidgets/QLineEdit:
 
 /usr/include/qt6/QtWidgets/QInputDialog:
 
 /usr/include/qt6/QtWidgets/QGridLayout:
 
+/usr/include/qt6/QtWidgets/QDialog:
+
 /usr/include/qt6/QtWidgets/QComboBox:
 
-/usr/include/qt6/QtWidgets/QApplication:
+/usr/include/qt6/QtWidgets/QCheckBox:
 
-/usr/include/qt6/QtGui/qvalidator.h:
+/usr/include/qt6/QtWidgets/QApplication:
 
 /usr/include/qt6/QtGui/qtransform.h:
 
 /usr/include/qt6/QtGui/qtgui-config.h:
+
+/usr/include/qt6/QtGui/qscreen.h:
 
 /usr/include/qt6/QtGui/qrgba64.h:
 
@@ -770,6 +823,8 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
 /usr/include/qt6/QtGui/qkeysequence.h:
 
 /usr/include/qt6/QtGui/qinputmethod.h:
+
+/usr/include/qt6/QtGui/qinputdevice.h:
 
 /usr/include/qt6/QtGui/qicon.h:
 
@@ -787,11 +842,21 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
 
 /usr/include/qt6/QtGui/qfont.h:
 
+/usr/include/qt6/QtGui/qeventpoint.h:
+
 /usr/include/qt6/QtGui/qcursor.h:
 
 /usr/include/qt6/QtGui/qcolor.h:
 
 /usr/include/qt6/QtGui/qaction.h:
+
+/usr/include/qt6/QtGui/QTransform:
+
+/usr/include/qt6/QtGui/qvalidator.h:
+
+/usr/include/qt6/QtGui/QPainterPath:
+
+/usr/include/qt6/QtGui/QPainter:
 
 /usr/include/qt6/QtGui/QIcon:
 
@@ -849,9 +914,35 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
 
 /usr/include/qt6/QtCore/qstringconverter_base.h:
 
-/usr/include/c++/16/bits/shared_ptr_base.h:
+/usr/include/qt6/QtCore/qstringbuilder.h:
 
-/usr/include/bits/stdint-least.h:
+/usr/include/qt6/QtCore/qstringalgorithms.h:
+
+/usr/include/qt6/QtCore/qstring.h:
+
+/usr/include/qt6/QtCore/qspan.h:
+
+/usr/include/qt6/QtCore/qsize.h:
+
+/usr/include/qt6/QtCore/qsharedpointer_impl.h:
+
+/usr/include/qt6/QtCore/qsharedpointer.h:
+
+/usr/include/qt6/QtCore/qshareddata.h:
+
+/usr/include/qt6/QtCore/qscopeguard.h:
+
+/usr/include/qt6/QtCore/qscopedpointer.h:
+
+/usr/include/qt6/QtCore/qstringconverter.h:
+
+/usr/include/qt6/QtCore/qregularexpression.h:
+
+/usr/include/qt6/QtGui/qpainterpath.h:
+
+/usr/include/qt6/QtCore/qprocessordetection.h:
+
+/usr/include/qt6/QtCore/qpoint.h:
 
 /usr/include/qt6/QtGui/qtextoption.h:
 
@@ -886,6 +977,8 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
 /usr/include/bits/struct_mutex.h:
 
 /usr/lib/libbz2.so.1.0:
+
+/usr/include/qt6/QtWidgets/QLayout:
 
 /usr/include/c++/16/bits/move.h:
 
@@ -927,9 +1020,9 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
 
 /usr/include/c++/16/ext/string_conversions.h:
 
-/usr/include/c++/16/bits/fs_path.h:
+/usr/include/qt6/QtCore/QEvent:
 
-/usr/include/c++/16/backward/binders.h:
+/usr/include/c++/16/bits/fs_path.h:
 
 /usr/include/c++/16/bits/binders.h:
 
@@ -942,6 +1035,8 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
 /usr/include/c++/16/cstdint:
 
 /usr/include/c++/16/bits/allocated_ptr.h:
+
+/usr/include/qt6/QtGui/qpainter.h:
 
 /usr/include/c++/16/bits/alloc_traits.h:
 
@@ -967,6 +1062,8 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
 
 /usr/include/bits/libm-simd-decl-stubs.h:
 
+/usr/include/c++/16/stop_token:
+
 /usr/include/c++/16/tr1/bessel_function.tcc:
 
 /usr/include/qt6/QtCore/QTimer:
@@ -983,17 +1080,23 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
 
 /usr/include/c++/16/bit:
 
+/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/include/ai.hpp:
+
 /usr/include/c++/16/bits/stl_list.h:
 
 /usr/include/c++/16/backward/auto_ptr.h:
 
-/usr/include/c++/16/bits/exception_ptr.h:
+/usr/include/qt6/QtWidgets/qformlayout.h:
 
-/usr/include/qt6/QtCore/qsharedpointer.h:
+/usr/include/c++/16/bits/exception_ptr.h:
 
 /usr/include/qt6/QtCore/qtclasshelpermacros.h:
 
 /usr/include/c++/16/x86_64-pc-linux-gnu/bits/atomic_word.h:
+
+/usr/include/qt6/QtCore/qset.h:
+
+/usr/include/c++/16/algorithm:
 
 /usr/include/c++/16/bits/ranges_base.h:
 
@@ -1007,19 +1110,15 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
 
 /usr/include/c++/16/stdexcept:
 
-/usr/include/qt6/QtCore/qversiontagging.h:
-
-/usr/include/c++/16/bits/stringfwd.h:
-
 /usr/include/bits/math-vector.h:
 
 /usr/include/qt6/QtWidgets/qabstractbutton.h:
 
 /usr/include/bits/types/wint_t.h:
 
-/usr/include/c++/16/new:
+/usr/include/qt6/QtGui/qpointingdevice.h:
 
-/usr/include/c++/16/bits/shared_ptr_atomic.h:
+/usr/include/c++/16/new:
 
 /usr/include/c++/16/unordered_map:
 
@@ -1071,13 +1170,17 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
 
 /usr/include/c++/16/ext/type_traits.h:
 
+/usr/include/bits/types/struct_itimerspec.h:
+
+/usr/include/qt6/QtCore/q20type_traits.h:
+
+/usr/include/c++/16/iomanip:
+
 /usr/include/c++/16/bits/chrono_io.h:
 
 /usr/include/c++/16/bits/exception.h:
 
 /usr/include/c++/16/bits/std_function.h:
-
-/usr/include/qt6/QtCore/qstringbuilder.h:
 
 /usr/include/bits/pthreadtypes-arch.h:
 
@@ -1107,6 +1210,10 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
 
 /usr/include/qt6/QtCore/qeventloop.h:
 
+/usr/include/c++/16/bits/intcmp.h:
+
+/usr/include/c++/16/bits/max_size_type.h:
+
 /usr/lib/libmd4c.so.0:
 
 /usr/lib/libicudata.so.78:
@@ -1116,8 +1223,6 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
 /usr/include/qt6/QtGui/qpolygon.h:
 
 /usr/include/qt6/QtCore/qfunctionaltools_impl.h:
-
-/usr/include/qt6/QtCore/qsharedpointer_impl.h:
 
 /usr/lib/libglib-2.0.so.0:
 
@@ -1137,11 +1242,15 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/C
 
 /usr/include/features.h:
 
+/usr/include/qt6/QtGui/qvectornd.h:
+
 /usr/include/bits/types/__locale_t.h:
 
 /usr/lib/libQt6Widgets.so.6.12.0:
 
 libchess_engine.a:
+
+/usr/include/c++/16/future:
 
 /usr/include/c++/16/bits/locale_conv.h:
 
@@ -1157,6 +1266,8 @@ libchess_engine.a:
 
 /usr/include/c++/16/bits/atomic_base.h:
 
+/usr/include/c++/16/bits/std_mutex.h:
+
 /usr/include/c++/16/bits/new_throw.h:
 
 /usr/include/qt6/QtCore/qcontainertools_impl.h:
@@ -1166,6 +1277,12 @@ libchess_engine.a:
 /usr/include/bits/flt-eval-method.h:
 
 /usr/include/c++/16/bits/unordered_set.h:
+
+/usr/include/qt6/QtWidgets/qmessagebox.h:
+
+/usr/include/c++/16/atomic:
+
+/usr/include/qt6/QtCore/qatomic.h:
 
 /usr/include/bits/timex.h:
 
@@ -1195,6 +1312,8 @@ libchess_engine.a:
 
 /usr/include/bits/types/struct_sched_param.h:
 
+/usr/include/qt6/QtGui/QPolygonF:
+
 /usr/lib/libGLX.so:
 
 /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++io.h:
@@ -1221,6 +1340,8 @@ libchess_engine.a:
 
 /usr/include/qt6/QtCore/qnamespace.h:
 
+/usr/include/qt6/QtGui/QMouseEvent:
+
 /usr/lib/gcc/x86_64-pc-linux-gnu/16/libatomic.so:
 
 /usr/include/bits/mathcalls-macros.h:
@@ -1231,17 +1352,11 @@ libchess_engine.a:
 
 /usr/include/c++/16/bits/ostream.h:
 
-/usr/include/c++/16/bits/intcmp.h:
-
-/usr/include/c++/16/bits/max_size_type.h:
-
 /usr/include/c++/16/bits/istream.tcc:
 
 /usr/include/c++/16/bits/ostream_print.h:
 
 /usr/lib/libpng16.so.16:
-
-/usr/include/qt6/QtCore/qprocessordetection.h:
 
 CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 
@@ -1255,6 +1370,8 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 
 /usr/include/asm/bitsperlong.h:
 
+/usr/include/c++/16/semaphore:
+
 /usr/lib/libb2.so.1:
 
 /usr/include/bits/typesizes.h:
@@ -1262,8 +1379,6 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 /usr/lib32/libexpat.so.1:
 
 /usr/lib/crti.o:
-
-/usr/include/qt6/QtCore/qstring.h:
 
 /usr/include/bits/pthreadtypes.h:
 
@@ -1301,6 +1416,10 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 
 /usr/lib/libXdmcp.so.6:
 
+/usr/include/qt6/QtCore/qrefcount.h:
+
+/usr/include/qt6/QtCore/qcalendar.h:
+
 /usr/include/bits/setjmp.h:
 
 /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++config.h:
@@ -1323,13 +1442,13 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 
 /usr/lib32/libbrotlienc.so.1:
 
-/usr/include/qt6/QtCore/qshareddata.h:
-
 /usr/include/sys/types.h:
 
 /usr/include/c++/16/bits/random.h:
 
 /usr/include/c++/16/bits/char_traits.h:
+
+/usr/include/qt6/QtGui/qvector2d.h:
 
 /usr/include/bits/types/__fpos_t.h:
 
@@ -1340,8 +1459,6 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 /usr/include/qt6/QtGui/qimage.h:
 
 /usr/include/c++/16/tr1/poly_hermite.tcc:
-
-/usr/include/qt6/QtCore/qstringalgorithms.h:
 
 /usr/lib/libdouble-conversion.so.3:
 
@@ -1358,6 +1475,8 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 /usr/lib/libz.so.1:
 
 /usr/include/qt6/QtCore/qlist.h:
+
+/usr/include/c++/16/bits/atomic_timed_wait.h:
 
 /usr/lib/libfreetype.so.6:
 
@@ -1439,6 +1558,8 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 
 /usr/include/c++/16/bits/functional_hash.h:
 
+/usr/include/c++/16/condition_variable:
+
 /usr/include/c++/16/bits/stl_bvector.h:
 
 /usr/include/c++/16/debug/debug.h:
@@ -1452,6 +1573,14 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 /usr/include/asm-generic/errno-base.h:
 
 /usr/include/c++/16/clocale:
+
+/usr/include/qt6/QtCore/qshareddata_impl.h:
+
+/usr/include/bits/struct_rwlock.h:
+
+/usr/include/bits/sched.h:
+
+/usr/include/qt6/QtCore/qconfig.h:
 
 /usr/include/c++/16/bits/atomic_lockfree_defines.h:
 
@@ -1469,6 +1598,8 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 
 /usr/include/qt6/QtWidgets/qtabwidget.h:
 
+/usr/include/qt6/QtGui/qevent.h:
+
 /usr/include/c++/16/bits/invoke.h:
 
 /usr/include/bits/floatn-common.h:
@@ -1483,9 +1614,15 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 
 /usr/include/linux/posix_types.h:
 
+/usr/include/qt6/QtCore/QObject:
+
 /usr/include/sys/single_threaded.h:
 
 /usr/include/asm-generic/errno.h:
+
+/usr/include/c++/16/backward/binders.h:
+
+/usr/include/c++/16/bits/semaphore_base.h:
 
 /usr/include/c++/16/bits/stl_vector.h:
 
@@ -1517,20 +1654,6 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 
 /usr/include/c++/16/bits/specfun.h:
 
-/usr/include/bits/types/struct_itimerspec.h:
-
-/usr/include/qt6/QtCore/q20type_traits.h:
-
-/usr/include/bits/sched.h:
-
-/usr/include/qt6/QtCore/qconfig.h:
-
-/usr/include/qt6/QtCore/qshareddata_impl.h:
-
-/usr/include/bits/struct_rwlock.h:
-
-/usr/include/c++/16/iomanip:
-
 /usr/include/sched.h:
 
 /usr/include/c++/16/bits/hashtable.h:
@@ -1547,9 +1670,15 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 
 /usr/include/bits/posix2_lim.h:
 
+/usr/include/bits/stdint-least.h:
+
+/usr/include/c++/16/bits/shared_ptr_base.h:
+
 /usr/include/bits/stdio.h:
 
 /usr/include/qt6/QtCore/qfloat16.h:
+
+/usr/include/qt6/QtWidgets/QDialogButtonBox:
 
 /usr/include/c++/16/cstdlib:
 
@@ -1557,11 +1686,15 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 
 /usr/include/c++/16/bits/allocator.h:
 
-/usr/include/qt6/QtCore/qspan.h:
-
 /usr/include/bits/time64.h:
 
 /usr/include/bits/stdlib-float.h:
+
+/usr/include/qt6/QtCore/qversiontagging.h:
+
+/usr/include/c++/16/bits/stringfwd.h:
+
+/usr/include/c++/16/bits/shared_ptr_atomic.h:
 
 /usr/include/c++/16/bits/sstream.tcc:
 
@@ -1570,6 +1703,10 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 /usr/include/qt6/QtCore/qtconfigmacros.h:
 
 /usr/include/gnu/stubs.h:
+
+/usr/include/c++/16/bits/std_thread.h:
+
+/usr/include/c++/16/ctime:
 
 /usr/include/c++/16/bits/stdexcept_except.h:
 
@@ -1615,8 +1752,6 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 
 /usr/include/c++/16/tr1/poly_laguerre.tcc:
 
-/usr/include/qt6/QtCore/qscopeguard.h:
-
 /usr/include/asm/posix_types_64.h:
 
 /usr/include/c++/16/bits/stl_set.h:
@@ -1630,6 +1765,8 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 /usr/include/c++/16/bits/stl_tempbuf.h:
 
 /usr/include/ctype.h:
+
+/usr/include/qt6/QtWidgets/qcheckbox.h:
 
 /usr/include/c++/16/bits/stl_tree.h:
 
@@ -1651,11 +1788,15 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 
 /usr/include/c++/16/bits/string_view.tcc:
 
+/usr/include/c++/16/bits/this_thread_sleep.h:
+
 /usr/include/c++/16/bits/unicode.h:
 
 /usr/include/qt6/QtCore/qhashfunctions.h:
 
 /usr/include/qt6/QtCore/QSignalBlocker:
+
+/usr/include/c++/16/bits/unique_lock.h:
 
 /usr/include/c++/16/bits/unique_ptr.h:
 
@@ -1666,6 +1807,8 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 /usr/include/c++/16/bits/uses_allocator_args.h:
 
 /usr/include/c++/16/bits/utility.h:
+
+/usr/include/c++/16/bits/atomic_futex.h:
 
 /usr/include/c++/16/bits/version.h:
 
@@ -1684,8 +1827,6 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 /usr/include/c++/16/initializer_list:
 
 /usr/include/c++/16/chrono:
-
-/usr/include/qt6/QtCore/qsize.h:
 
 /usr/include/qt6/QtGui/qtextcursor.h:
 
@@ -1708,8 +1849,6 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 /usr/include/c++/16/format:
 
 /usr/include/c++/16/cstdio:
-
-/usr/include/c++/16/ctime:
 
 /usr/include/qt6/QtCore/qcompare_impl.h:
 
@@ -1749,13 +1888,23 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 
 /usr/include/c++/16/istream:
 
-/usr/include/qt6/QtCore/qpoint.h:
-
 /usr/include/c++/16/limits:
+
+/usr/include/qt6/QtGui/qscreen_platform.h:
 
 /usr/include/c++/16/locale:
 
 /usr/include/c++/16/memory:
+
+/usr/include/qt6/QtWidgets/QLineEdit:
+
+/usr/include/qt6/QtWidgets/QFormLayout:
+
+/usr/include/c++/16/mutex:
+
+/usr/include/qt6/QtGui/qtextformat.h:
+
+/usr/include/qt6/QtCore/qmath.h:
 
 /usr/include/c++/16/numbers:
 
@@ -1763,11 +1912,15 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 
 /usr/include/c++/16/numeric:
 
+/usr/include/qt6/QtCore/QList:
+
 /usr/include/c++/16/pstl/glue_memory_defs.h:
 
 /usr/include/c++/16/pstl/glue_numeric_defs.h:
 
 /usr/include/c++/16/ratio:
+
+/usr/include/qt6/QtGui/QResizeEvent:
 
 /usr/include/c++/16/bits/fs_fwd.h:
 
@@ -1841,12 +1994,6 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 
 /usr/include/gnu/stubs-64.h:
 
-/usr/include/qt6/QtWidgets/qmessagebox.h:
-
-/usr/include/c++/16/atomic:
-
-/usr/include/qt6/QtCore/qatomic.h:
-
 /usr/lib/crtn.o:
 
 /usr/include/c++/16/x86_64-pc-linux-gnu/bits/basic_file.h:
@@ -1882,6 +2029,12 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 /usr/include/qt6/QtCore/qbindingstorage.h:
 
 /usr/include/qt6/QtCore/QLockFile:
+
+/usr/include/qt6/QtCore/QRect:
+
+/usr/include/qt6/QtCore/QSize:
+
+/usr/include/qt6/QtCore/QSizeF:
 
 /usr/include/qt6/QtGui/qbrush.h:
 
@@ -1987,10 +2140,6 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 
 /usr/include/qt6/QtCore/qline.h:
 
-/usr/include/qt6/QtGui/qtextformat.h:
-
-/usr/include/qt6/QtCore/qmath.h:
-
 /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o:
 
 /usr/include/qt6/QtCore/qmetacontainer.h:
@@ -2020,17 +2169,3 @@ CMakeFiles/chess_gui.dir/gui/main.cpp.o:
 /usr/lib/libOpenGL.so:
 
 /usr/include/qt6/QtCore/qpair.h:
-
-/usr/include/qt6/QtCore/qcalendar.h:
-
-/usr/include/qt6/QtCore/qrefcount.h:
-
-/usr/include/qt6/QtCore/qscopedpointer.h:
-
-/usr/include/c++/16/algorithm:
-
-/usr/include/qt6/QtCore/qset.h:
-
-/usr/include/qt6/QtCore/qregularexpression.h:
-
-/usr/include/qt6/QtCore/qstringconverter.h:

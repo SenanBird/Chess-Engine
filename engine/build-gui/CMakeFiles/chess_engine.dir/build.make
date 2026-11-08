@@ -72,10 +72,24 @@ include CMakeFiles/chess_engine.dir/flags.make
 CMakeFiles/chess_engine.dir/codegen:
 .PHONY : CMakeFiles/chess_engine.dir/codegen
 
+CMakeFiles/chess_engine.dir/src/ai.cpp.o: CMakeFiles/chess_engine.dir/flags.make
+CMakeFiles/chess_engine.dir/src/ai.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/ai.cpp
+CMakeFiles/chess_engine.dir/src/ai.cpp.o: CMakeFiles/chess_engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/chess_engine.dir/src/ai.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess_engine.dir/src/ai.cpp.o -MF CMakeFiles/chess_engine.dir/src/ai.cpp.o.d -o CMakeFiles/chess_engine.dir/src/ai.cpp.o -c /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/ai.cpp
+
+CMakeFiles/chess_engine.dir/src/ai.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/chess_engine.dir/src/ai.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/ai.cpp > CMakeFiles/chess_engine.dir/src/ai.cpp.i
+
+CMakeFiles/chess_engine.dir/src/ai.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chess_engine.dir/src/ai.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/ai.cpp -o CMakeFiles/chess_engine.dir/src/ai.cpp.s
+
 CMakeFiles/chess_engine.dir/src/bishop.cpp.o: CMakeFiles/chess_engine.dir/flags.make
 CMakeFiles/chess_engine.dir/src/bishop.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/bishop.cpp
 CMakeFiles/chess_engine.dir/src/bishop.cpp.o: CMakeFiles/chess_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/chess_engine.dir/src/bishop.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/chess_engine.dir/src/bishop.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess_engine.dir/src/bishop.cpp.o -MF CMakeFiles/chess_engine.dir/src/bishop.cpp.o.d -o CMakeFiles/chess_engine.dir/src/bishop.cpp.o -c /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/bishop.cpp
 
 CMakeFiles/chess_engine.dir/src/bishop.cpp.i: cmake_force
@@ -89,7 +103,7 @@ CMakeFiles/chess_engine.dir/src/bishop.cpp.s: cmake_force
 CMakeFiles/chess_engine.dir/src/board.cpp.o: CMakeFiles/chess_engine.dir/flags.make
 CMakeFiles/chess_engine.dir/src/board.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/board.cpp
 CMakeFiles/chess_engine.dir/src/board.cpp.o: CMakeFiles/chess_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/chess_engine.dir/src/board.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/chess_engine.dir/src/board.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess_engine.dir/src/board.cpp.o -MF CMakeFiles/chess_engine.dir/src/board.cpp.o.d -o CMakeFiles/chess_engine.dir/src/board.cpp.o -c /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/board.cpp
 
 CMakeFiles/chess_engine.dir/src/board.cpp.i: cmake_force
@@ -100,10 +114,24 @@ CMakeFiles/chess_engine.dir/src/board.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chess_engine.dir/src/board.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/board.cpp -o CMakeFiles/chess_engine.dir/src/board.cpp.s
 
+CMakeFiles/chess_engine.dir/src/board_copy.cpp.o: CMakeFiles/chess_engine.dir/flags.make
+CMakeFiles/chess_engine.dir/src/board_copy.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/board_copy.cpp
+CMakeFiles/chess_engine.dir/src/board_copy.cpp.o: CMakeFiles/chess_engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/chess_engine.dir/src/board_copy.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess_engine.dir/src/board_copy.cpp.o -MF CMakeFiles/chess_engine.dir/src/board_copy.cpp.o.d -o CMakeFiles/chess_engine.dir/src/board_copy.cpp.o -c /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/board_copy.cpp
+
+CMakeFiles/chess_engine.dir/src/board_copy.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/chess_engine.dir/src/board_copy.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/board_copy.cpp > CMakeFiles/chess_engine.dir/src/board_copy.cpp.i
+
+CMakeFiles/chess_engine.dir/src/board_copy.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chess_engine.dir/src/board_copy.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/board_copy.cpp -o CMakeFiles/chess_engine.dir/src/board_copy.cpp.s
+
 CMakeFiles/chess_engine.dir/src/castling.cpp.o: CMakeFiles/chess_engine.dir/flags.make
 CMakeFiles/chess_engine.dir/src/castling.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/castling.cpp
 CMakeFiles/chess_engine.dir/src/castling.cpp.o: CMakeFiles/chess_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/chess_engine.dir/src/castling.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/chess_engine.dir/src/castling.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess_engine.dir/src/castling.cpp.o -MF CMakeFiles/chess_engine.dir/src/castling.cpp.o.d -o CMakeFiles/chess_engine.dir/src/castling.cpp.o -c /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/castling.cpp
 
 CMakeFiles/chess_engine.dir/src/castling.cpp.i: cmake_force
@@ -117,7 +145,7 @@ CMakeFiles/chess_engine.dir/src/castling.cpp.s: cmake_force
 CMakeFiles/chess_engine.dir/src/draw.cpp.o: CMakeFiles/chess_engine.dir/flags.make
 CMakeFiles/chess_engine.dir/src/draw.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/draw.cpp
 CMakeFiles/chess_engine.dir/src/draw.cpp.o: CMakeFiles/chess_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/chess_engine.dir/src/draw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/chess_engine.dir/src/draw.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess_engine.dir/src/draw.cpp.o -MF CMakeFiles/chess_engine.dir/src/draw.cpp.o.d -o CMakeFiles/chess_engine.dir/src/draw.cpp.o -c /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/draw.cpp
 
 CMakeFiles/chess_engine.dir/src/draw.cpp.i: cmake_force
@@ -131,7 +159,7 @@ CMakeFiles/chess_engine.dir/src/draw.cpp.s: cmake_force
 CMakeFiles/chess_engine.dir/src/game.cpp.o: CMakeFiles/chess_engine.dir/flags.make
 CMakeFiles/chess_engine.dir/src/game.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/game.cpp
 CMakeFiles/chess_engine.dir/src/game.cpp.o: CMakeFiles/chess_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/chess_engine.dir/src/game.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/chess_engine.dir/src/game.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess_engine.dir/src/game.cpp.o -MF CMakeFiles/chess_engine.dir/src/game.cpp.o.d -o CMakeFiles/chess_engine.dir/src/game.cpp.o -c /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/game.cpp
 
 CMakeFiles/chess_engine.dir/src/game.cpp.i: cmake_force
@@ -145,7 +173,7 @@ CMakeFiles/chess_engine.dir/src/game.cpp.s: cmake_force
 CMakeFiles/chess_engine.dir/src/game_check.cpp.o: CMakeFiles/chess_engine.dir/flags.make
 CMakeFiles/chess_engine.dir/src/game_check.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/game_check.cpp
 CMakeFiles/chess_engine.dir/src/game_check.cpp.o: CMakeFiles/chess_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/chess_engine.dir/src/game_check.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/chess_engine.dir/src/game_check.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess_engine.dir/src/game_check.cpp.o -MF CMakeFiles/chess_engine.dir/src/game_check.cpp.o.d -o CMakeFiles/chess_engine.dir/src/game_check.cpp.o -c /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/game_check.cpp
 
 CMakeFiles/chess_engine.dir/src/game_check.cpp.i: cmake_force
@@ -159,7 +187,7 @@ CMakeFiles/chess_engine.dir/src/game_check.cpp.s: cmake_force
 CMakeFiles/chess_engine.dir/src/king.cpp.o: CMakeFiles/chess_engine.dir/flags.make
 CMakeFiles/chess_engine.dir/src/king.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/king.cpp
 CMakeFiles/chess_engine.dir/src/king.cpp.o: CMakeFiles/chess_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/chess_engine.dir/src/king.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/chess_engine.dir/src/king.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess_engine.dir/src/king.cpp.o -MF CMakeFiles/chess_engine.dir/src/king.cpp.o.d -o CMakeFiles/chess_engine.dir/src/king.cpp.o -c /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/king.cpp
 
 CMakeFiles/chess_engine.dir/src/king.cpp.i: cmake_force
@@ -173,7 +201,7 @@ CMakeFiles/chess_engine.dir/src/king.cpp.s: cmake_force
 CMakeFiles/chess_engine.dir/src/knight.cpp.o: CMakeFiles/chess_engine.dir/flags.make
 CMakeFiles/chess_engine.dir/src/knight.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/knight.cpp
 CMakeFiles/chess_engine.dir/src/knight.cpp.o: CMakeFiles/chess_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/chess_engine.dir/src/knight.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/chess_engine.dir/src/knight.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess_engine.dir/src/knight.cpp.o -MF CMakeFiles/chess_engine.dir/src/knight.cpp.o.d -o CMakeFiles/chess_engine.dir/src/knight.cpp.o -c /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/knight.cpp
 
 CMakeFiles/chess_engine.dir/src/knight.cpp.i: cmake_force
@@ -187,7 +215,7 @@ CMakeFiles/chess_engine.dir/src/knight.cpp.s: cmake_force
 CMakeFiles/chess_engine.dir/src/pawn.cpp.o: CMakeFiles/chess_engine.dir/flags.make
 CMakeFiles/chess_engine.dir/src/pawn.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/pawn.cpp
 CMakeFiles/chess_engine.dir/src/pawn.cpp.o: CMakeFiles/chess_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/chess_engine.dir/src/pawn.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/chess_engine.dir/src/pawn.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess_engine.dir/src/pawn.cpp.o -MF CMakeFiles/chess_engine.dir/src/pawn.cpp.o.d -o CMakeFiles/chess_engine.dir/src/pawn.cpp.o -c /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/pawn.cpp
 
 CMakeFiles/chess_engine.dir/src/pawn.cpp.i: cmake_force
@@ -201,7 +229,7 @@ CMakeFiles/chess_engine.dir/src/pawn.cpp.s: cmake_force
 CMakeFiles/chess_engine.dir/src/queen.cpp.o: CMakeFiles/chess_engine.dir/flags.make
 CMakeFiles/chess_engine.dir/src/queen.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/queen.cpp
 CMakeFiles/chess_engine.dir/src/queen.cpp.o: CMakeFiles/chess_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/chess_engine.dir/src/queen.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/chess_engine.dir/src/queen.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess_engine.dir/src/queen.cpp.o -MF CMakeFiles/chess_engine.dir/src/queen.cpp.o.d -o CMakeFiles/chess_engine.dir/src/queen.cpp.o -c /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/queen.cpp
 
 CMakeFiles/chess_engine.dir/src/queen.cpp.i: cmake_force
@@ -215,7 +243,7 @@ CMakeFiles/chess_engine.dir/src/queen.cpp.s: cmake_force
 CMakeFiles/chess_engine.dir/src/rook.cpp.o: CMakeFiles/chess_engine.dir/flags.make
 CMakeFiles/chess_engine.dir/src/rook.cpp.o: /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/rook.cpp
 CMakeFiles/chess_engine.dir/src/rook.cpp.o: CMakeFiles/chess_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/chess_engine.dir/src/rook.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/chess_engine.dir/src/rook.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess_engine.dir/src/rook.cpp.o -MF CMakeFiles/chess_engine.dir/src/rook.cpp.o.d -o CMakeFiles/chess_engine.dir/src/rook.cpp.o -c /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/src/rook.cpp
 
 CMakeFiles/chess_engine.dir/src/rook.cpp.i: cmake_force
@@ -228,8 +256,10 @@ CMakeFiles/chess_engine.dir/src/rook.cpp.s: cmake_force
 
 # Object files for target chess_engine
 chess_engine_OBJECTS = \
+"CMakeFiles/chess_engine.dir/src/ai.cpp.o" \
 "CMakeFiles/chess_engine.dir/src/bishop.cpp.o" \
 "CMakeFiles/chess_engine.dir/src/board.cpp.o" \
+"CMakeFiles/chess_engine.dir/src/board_copy.cpp.o" \
 "CMakeFiles/chess_engine.dir/src/castling.cpp.o" \
 "CMakeFiles/chess_engine.dir/src/draw.cpp.o" \
 "CMakeFiles/chess_engine.dir/src/game.cpp.o" \
@@ -243,8 +273,10 @@ chess_engine_OBJECTS = \
 # External object files for target chess_engine
 chess_engine_EXTERNAL_OBJECTS =
 
+libchess_engine.a: CMakeFiles/chess_engine.dir/src/ai.cpp.o
 libchess_engine.a: CMakeFiles/chess_engine.dir/src/bishop.cpp.o
 libchess_engine.a: CMakeFiles/chess_engine.dir/src/board.cpp.o
+libchess_engine.a: CMakeFiles/chess_engine.dir/src/board_copy.cpp.o
 libchess_engine.a: CMakeFiles/chess_engine.dir/src/castling.cpp.o
 libchess_engine.a: CMakeFiles/chess_engine.dir/src/draw.cpp.o
 libchess_engine.a: CMakeFiles/chess_engine.dir/src/game.cpp.o
@@ -256,7 +288,7 @@ libchess_engine.a: CMakeFiles/chess_engine.dir/src/queen.cpp.o
 libchess_engine.a: CMakeFiles/chess_engine.dir/src/rook.cpp.o
 libchess_engine.a: CMakeFiles/chess_engine.dir/build.make
 libchess_engine.a: CMakeFiles/chess_engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX static library libchess_engine.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX static library libchess_engine.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/chess_engine.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/chess_engine.dir/link.txt --verbose=$(VERBOSE)
 

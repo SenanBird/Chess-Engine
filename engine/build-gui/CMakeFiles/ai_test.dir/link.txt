@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/ai_test.dir/link.d CMakeFiles/ai_test.dir/src/ai_test.cpp.o -o ai_test  libchess_engine.a
