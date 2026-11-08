@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/draw_test.dir/link.d CMakeFiles/draw_test.dir/tests/draw_test.cpp.o -o draw_test  libchess_engine.a

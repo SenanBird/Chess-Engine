@@ -1,23 +1,31 @@
-# Chess Engine — project notes and handoff
+# ZergChess — project handoff
 
-Run this from anywhere inside the Git checkout to refresh `engine/docs/project-context.txt`:
+## Refresh the source snapshot first
+
+Run this Bash block from anywhere inside the Git checkout. It writes `engine/docs/project-context.txt` with the current source, tests, build configuration, and documentation. It excludes generated builds, private game data, artwork bytes, and editor swap files.
 
 ```bash
 (
     set -euo pipefail
     cd "$(git rev-parse --show-toplevel)"
     output=engine/docs/project-context.txt
+    mkdir -p engine/docs
+
+    tmp=$(mktemp engine/docs/.project-context.XXXXXX)
+    trap 'rm -f "$tmp"' EXIT
 
     list_files() {
         find engine \
-            \( -type d \( -name build -o -name archive -o -name data \
-                -o -name .venv -o -name __pycache__ \) -prune \) -o \
-            \( -type f ! -path "$output" -print0 \) |
+            \( -type d \( -name build -o -name 'build-*' -o -name archive \
+                -o -name data -o -name .venv -o -name __pycache__ \
+                -o -name .git \) -prune \) -o \
+            \( -type f ! -path "$output" \
+                ! -name '*.swp' ! -name '*.swo' ! -name '*~' -print0 \) |
             LC_ALL=C sort -z
     }
 
     {
-        printf '# Chess Engine project snapshot\n\n## File paths\n'
+        printf '# ZergChess source snapshot\n\n## File paths\n'
         list_files | tr '\0' '\n'
 
         printf '\n## Source, build configuration, and documentation\n'
@@ -25,110 +33,113 @@ Run this from anywhere inside the Git checkout to refresh `engine/docs/project-c
             case "$path" in
                 *.cpp|*.cc|*.c|*.hpp|*.h|*.py|*.sh|*.cmake|\
                 */CMakeLists.txt|*.qrc|*.ui|*.md|*.txt|*.json|\
-                *.yaml|*.yml|*.toml|*/LICENSE*|*/COPYING*)
+                *.yaml|*.yml|*.toml)
                     printf '\n=== %s ===\n' "$path"
                     cat -- "$path"
                     printf '\n'
                     ;;
             esac
         done
-    } > "$output"
+    } > "$tmp"
 
+    mv -- "$tmp" "$output"
+    trap - EXIT
     printf 'Wrote %s/%s\n' "$PWD" "$output"
     wc -l -- "$output"
 )
 ```
 
-Attach the generated snapshot and `engine/README.md` to a fresh chat. The snapshot includes these notes, source files, tests, and CMake configuration. Artwork paths are listed without dumping the artwork. Build outputs and personal match history are excluded. Refresh the snapshot after meaningful changes. Treat it as a handoff copy rather than a file to edit.
+Before sharing the snapshot, review it for anything private. Attach the refreshed snapshot, the current README, and `ZergChess(1).pdf` to the next agent. If requesting a complete GUI replacement, ensure the snapshot contains the **latest** `engine/gui/main.cpp`. Treat the snapshot as a handoff copy, not a source file to edit.
+
+## Name and working arrangement
+
+The project name is **ZergChess**.
+
+The owner applies changes on their CachyOS computer. For code changes, say which file to change and provide the **entire paste-ready contents of each changed file in chat**. Do not create downloadable code files unless the owner explicitly requests them. Give build and test commands and say clearly when code has not been compiled or tested against the owner's repository.
+
+This handoff describes the last reported state. The live source and fresh test results take precedence.
 
 ## Project goal
 
-Build a downloadable Linux desktop chess app where two people can play on the same computer, or one person can play against a random opponent or my own AI. Use the same C++ rules engine for every mode. Save completed games so players can browse and replay their matches. Make those records usable by a separate Python pipeline that can also import public chess games for training.
+Build a downloadable Linux desktop chess app using a shared C++ rules engine. Two people can play locally; eventually a person can play against a search-based AI. Completed matches can be saved and replayed. Training happens separately from ordinary gameplay.
 
-This is a learning project in C++, desktop software, and machine learning. I want a working app I can share on GitHub, a clear explanation of how it works, and evidence that the engine and data pipeline behave as intended.
+The owner develops on a Ryzen 7 9800X3D with 32 GB DDR5 RAM and an RTX 3080. The distributed app must also work on smaller computers **without requiring a GPU**.
 
-## Current state
+## Current state, reported on 8 November 2026
 
-- The **Qt 6 desktop app works locally on CachyOS**. Two people can play on one computer. The board uses SVG pieces, highlights legal destinations, prompts for promotion, and shows a result popup.
-- The C++ `Game` class handles turn order, legal moves, the result, and game saving. It uses `Board` for chess rules. Keep the GUI, random player, and future AI behind this shared interface.
-- Ordinary moves, checkmate, stalemate, promotion, en passant, and castling are implemented. Automatic draws cover fivefold repetition, the 75-move rule, and common insufficient-material positions.
-- Tests have passed for castling, insufficient material and board reset, and the 75-move threshold and counter resets. Manual runs have checked Fool’s Mate, promotion, en passant expiry, and game saving. These checks do not establish complete rule coverage.
-- The terminal front end has been removed from the project layout. **Verify `engine/CMakeLists.txt` no longer references `cli/main.cpp`**, then configure from scratch. An old executable in `engine/build/` only proves an earlier build worked.
-- Completed games append to `engine/data/games.tsv`. The popup shows the save path. Closing or discarding an unfinished local game does not save it.
-- The current TSV has `result`, `reason`, `moves`, and `final_placement`. Moves use coordinate notation such as `e2e4` and `b7a8n`. The final placement is the piece-placement field of FEN. The move list can reconstruct a game from the standard starting position.
-- Still open: threefold and 50-move draw claims, general dead-position detection, broader rule verification, match history and replay, bots, dataset import and export, and release packaging.
+- The Qt 6 Widgets GUI uses SVG pieces. Legal destinations are green with visible borders; the selected square is amber. A checked king's square is red, and all pieces currently checking that king are highlighted faint blue, including double check.
+- Local two-person play rotates the **display** after each turn by mapping displayed squares to engine coordinates. It does not rotate or rewrite the underlying engine board.
+- The last supplied GUI had a bottom Menu containing Local, Random, disabled future AI, and Replay. Replay offered Local and Random-games sources, Game ID entry, and previous/next move controls. **Inspect the current GUI source** before assuming all of these remain. The owner has since removed the headless random-data generator, so the Random-games replay source may now be unnecessary.
+- `Game` owns turn order, move history, result, and saving. `Board` owns chess rules and legality. The shared engine supports ordinary moves, castling, en passant, promotion, checkmate, and stalemate. Automatic draws cover fivefold repetition, the 75-move rule, and several common insufficient-material cases.
+- Threefold and 50-move claims, general dead-position detection, stronger rule tests, and release packaging remain open.
+- Completed local games save to `engine/data/games.tsv`. The reported format has `game_id`, `result`, `reason`, `moves`, and `final_placement`. Moves use coordinate notation such as `e2e4` and `a7a8q`. `final_placement` is the piece-placement portion of FEN, not a complete FEN. Older four-column history was designed to migrate to IDs with a backup. Confirm the exact current implementation before changing storage.
+- The standalone random-vs-random batch generator was **removed at the owner's request**. Its role is now a randomized **rules regression test**, `engine/tests/random_rules_test.cpp`. It plays 20 seeded games in memory, up to 300 plies, checks accepted moves, and replays the move sequences. It does not write game data. The owner showed that `engine/data/random_games.tsv` is absent.
+- The owner's last Debug configure/build succeeded. CTest passed **4/4**: `castling_test`, `draw_test`, `move_count_test`, and `random_rules_test`. The random test took about 1.71 seconds on their computer. A Qt message about optional `WrapVulkanHeaders` did not block the build.
+- `engine/build/` still contains old binaries, including an obsolete terminal `chess` executable. That is a stale build directory, not proof that the terminal target remains in current CMake. The active build directory was `engine/build-gui`; CMake placed `chess_gui` in the repository root.
+- The randomized test runs sequentially. `cmake --build ... --parallel` affects compilation, not the test's number of CPU threads.
 
-## Where things live
+## ZergChess PDF: intended search
 
-| Path | Purpose |
-|---|---|
-| `chess_gui` | Locally built executable, placed beside `engine/` after a build. |
-| `engine/src/` and `engine/include/` | Shared C++ rules and game interface. |
-| `engine/gui/` and `engine/gui/assets/` | Desktop app and SVG pieces. |
-| `engine/tests/` | Automated checks for the shared rules. |
-| `engine/data/` | Local game records. Keep personal history out of Git. |
-| `engine/docs/` | Project notes and generated handoff snapshot. |
-| `engine/build/` | Generated CMake files and compiled outputs. Recreate these on each computer. |
-| `engine/CMakeLists.txt` | Build recipe for the shared library, desktop app, and tests. |
-| `engine/README.md` | Build and launch instructions for a new computer. |
+The brother's PDF describes a **neural-network-enhanced negamax** chess engine. It is a design reference from another implementation, not proof that its performance or training approach already works in this repository.
 
-## Plan forward
+### Negamax and alpha–beta
 
-### 1. Finish the desktop-only build and strengthen the rules tests
+For each legal move, search the resulting position from the opponent's perspective, negate that score, and choose the maximum. Checkmate and other terminal results take precedence over a static or learned position evaluation.
 
-- Remove any remaining CLI target or CLI instructions. Build in a fresh build directory to catch stale dependencies. Run the automated tests, launch the GUI, and finish a game to verify artwork, the result popup, and the saved record.
-- Add a legal move-count test that explores several moves deep and compares the totals with known reference positions. Include targeted tests for en passant exposing your own king, promotion as the only legal move, and a known stalemate. Keep these tests independent of the GUI.
-- Add threefold and 50-move draw claims through `Game` and the GUI. Cover claims based on the current position and on a specified legal move. Test accepted and rejected claims and confirm that an invalid claim does not advance the turn.
-- Keep the current dead-position detection documented as limited. Stalemate means the player has no legal move and is not in check. A dead position can still have legal moves, but neither side can ever deliver mate. A simulation hitting its run limit is `unfinished`, never a chess draw.
+Alpha–beta search avoids examining branches that cannot improve the decision. Its effectiveness depends heavily on trying promising moves early. The C++ chess engine remains the authority for legal moves; a neural-network legality prediction cannot authorize a move.
 
-**Done when:** a fresh desktop-only build works, the tests pass, and the README accurately describes the supported rules and remaining limitations.
+### Move ordering and search optimizations
 
-### 2. Give saved games a stable format and build match history
+1. **Transposition table:** use a Zobrist key to identify previously searched positions. The key must represent all relevant chess state: pieces, side to move, castling rights, and en-passant state. Store depth, score, bound type (exact, lower, or upper), and a suggested best move. Try that move first. Account carefully for draw context and mate-score distance.
+2. **Network ordering:** after the table move, order other legal moves using network predictions. This is a search priority, not a final verdict on which move is best.
+3. **Principal Variation Search (PVS):** thoroughly search the most promising move; probe later moves using a narrow window, then re-search a move if the probe suggests it could become best.
+4. **Late Move Reduction (LMR):** search later quiet moves at a reduced depth first, re-searching at full depth if necessary. Checks, tactical moves, shallow positions, and principal variations need safeguards.
+5. **Quiescence search:** at the normal depth boundary, continue through relevant tactical moves rather than evaluating a position midway through an exchange. The PDF mentions captures and promotions. If the side to move is in check, search legal evasions; do not accept a static “stand pat” evaluation while still in check.
 
-- Preserve the existing TSV records. Add a reader for the old format before changing the writer or migrating any history.
-- Define a versioned game record with a game ID, timestamp, White and Black player types, source, starting position, ordered moves, result, and termination reason. Keep result and reason separate so a resignation can be recorded even if the board still has legal moves.
-- Move record reading and writing into shared code so local play, bots, and imported games can use the same model. Decide the storage format after checking that it can round-trip both current TSV records and imported games with extra metadata.
-- Add a **History** view in the desktop app. Start with a list showing who played, when, and what happened. Add replay with previous and next move controls using a separate board so browsing history cannot affect the current game.
+The PDF mentions a transposition table of around one million entries and an NN cache. These are details of that implementation, **not required defaults** for the shipped ZergChess app.
 
-**Done when:** old games still open, new games are saved once, and a saved game can be replayed from start to finish.
+### Proposed neural-network structure
 
-### 3. Add a random opponent and a batch runner
+- Represent the chessboard as square nodes with piece information, coordinates, side to move, pawn identity where needed for the proposed action slots, and relevant state such as en passant.
+- Directional edges in eight compass directions provide line-of-sight information, including the direction, distance to the first obstacle, and obstacle type.
+- The described network uses a node encoder, six residual edge-gated message-passing blocks, global pooling/readout, and a slot-wise policy head. The PDF suggests width 512 and 15% training dropout. These are starting design choices rather than proven requirements for the target runtime budget.
+- The PDF text says `8x5` for the square grid in one place. That conflicts with a normal 8×8 chessboard. Clarify this before implementing the graph layout.
+- The value head predicts a position value and learned uncertainty; the PDF proposes Student-t negative log-likelihood against eventual game outcomes.
+- Policy move slots predict auxiliary legality, how likely a legal move is to be fully examined by search, and a value for examined moves. A pairwise ranking loss teaches the network which moves to search first. The PDF describes combining visit probability and move value with a 0.5 mixing weight. Define the exact slots, promotion choices, castling, and player perspective before implementation.
 
-- Expose all legal moves for the side to move through `Game`. Sample uniformly from that list for the first random opponent. Use the same interface for local play and automated games.
-- Add a mode picker for **Human vs Human** and **Human vs Random**. Keep the GUI responsive while a bot is choosing. Use a seed for repeatable test runs.
-- Build a separate batch runner for random vs random. This is a data generation tool, so it does not need the old interactive terminal front end or a GUI. Give it a game limit, a move limit per game, a seed, and an output path.
-- Label the source of each game. If a game reaches the move limit, record `unfinished` separately from completed results. Keep batch output separate from personal match history by default.
+### Training data and GPU batching
 
-**Done when:** a person can play the random bot in the app, and a seeded batch run produces replayable records with correct results.
+The intended teaching data comes from **search**, including the position, candidate legal moves, which candidates were searched sufficiently, their scores or bounds, and eventual outcomes. The current local-game TSV only stores the played sequence, result, and final placement. It cannot by itself provide the PDF's search-policy targets.
 
-### 4. Import public games and build the Python data pipeline
+Split training and validation by **entire game**, never by individual positions from the same game. A simulation stopped by a move limit is `unfinished`, not a draw.
 
-- Start with a small sample of standard-chess PGN games. Use a PGN parser to read the metadata and replay the moves, then translate them into the same game record used by the C++ app.
-- Preserve source IDs and provenance, recorded outcomes, and available termination reasons. Check the dataset’s license before redistributing anything. Report skipped or invalid games so import problems are visible.
-- Export training examples by replaying each game. Start with the position before each move, the legal moves, the move played, the result from the moving player’s perspective, and the source game ID.
-- Keep all positions from one game in the same train, validation, or test split. Keep human, random, and AI sources distinguishable so experiments can select or compare them independently.
+The PDF describes a separate Rust prototype that pauses searches when they request neural-network inference, batches requests on the GPU, and resumes the searches. This is a later training/data-generation optimization. It is not required to make the distributed desktop app playable. Its random opening exploration and initial simple evaluator also do not require bringing back the deleted random batch generator.
 
-**Done when:** one local game and one imported PGN game can both be replayed and exported through the same pipeline, with valid positions, moves, and labels.
+## Resource and distribution requirements
 
-### 5. Train a baseline AI and connect it to the app
+The owner's proposed default is **2 CPU workers** and a **2 GB engine-managed memory budget**, adjustable in Options, with a “Maximum performance” preset. The memory setting can bound structures the program owns, such as a transposition table or NN cache; it must not be advertised as a guaranteed cap on total process memory.
 
-- Keep the random bot as a baseline. For a first model, try predicting human moves or learning position values from game results. Random self-play is useful for generating positions and testing the pipeline, but random moves are poor targets for learning which move to choose.
-- If experimenting with rewards for captures, measure the effect separately. A capture reward can encourage the model to take material at the expense of king safety or winning. Judge progress using game outcomes.
-- Give the Python engine a small interface that receives a position and returns a move. The C++ game remains responsible for validating the answer. Handle an invalid move, timeout, or engine crash without freezing the window.
-- Compare versions in repeatable matches with colors swapped. Record wins, draws, losses, and illegal responses against the same opponents and settings. Use those results to decide whether AI self-play is improving the model.
+Add an adjustable thinking-time limit per AI move so complex positions cannot search indefinitely. Training may use the owner's GPU and larger resource budgets as a separate developer process. Playing and launching the shipped app must work without a GPU.
 
-**Done when:** I can select my AI in the desktop app, play a complete game, and compare it with the random baseline using recorded results.
+Do not add two search workers merely to satisfy the setting: a first single-thread alpha–beta search is a reasonable starting point. Implement and test search parallelism when it has a clear design and measurable benefit. Benchmark speed, peak memory, and move quality on modest CPU-only hardware before claiming broad compatibility.
 
-### 6. Publish a downloadable Linux release
+## Next implementation milestone
 
-- Keep source-build instructions in the README and record the compiler, CMake, Qt, and Linux setup actually tested. Include a screenshot and clear build and launch steps.
-- Package the desktop executable, artwork, and required runtime components for the target system. Decide where the packaged app saves user history so it can write there even when installed in a read-only location. Verify artwork redistribution rights.
-- Test the release on another machine or a clean environment. Launch it without building the source, complete a game, and confirm that the saved history is available after restarting the app.
+1. Obtain a freshly generated source snapshot and current README. Check whether the GUI still exposes a Random-games replay source even though the random dataset generator has been removed. Do not recreate random datasets without a new request.
+2. Build a **correct, bounded CPU search** using fixed-depth negamax, terminal scores, simple material evaluation, and legal moves from the existing engine. Add deterministic tactical tests and record nodes searched and elapsed time.
+3. Check how search positions can be copied or undone safely. The board owns pieces through `unique_ptr`; do not assume it has a working copy constructor. Do not mutate the live GUI game during search. Preserve castling, en passant, promotion, repetition, and draw state.
+4. Add alpha–beta pruning and compare its node count with plain negamax. Then add move ordering, a memory-budgeted transposition table, and check-aware quiescence. Add PVS and LMR only after establishing correctness and benchmarks for the simpler search.
+5. Integrate AI play into the GUI on a bounded worker task so the window remains responsive. Expose the agreed resource controls. Add the neural evaluator and search-generated training examples after the CPU search is trustworthy.
 
-**Done when:** someone can follow the GitHub link, download the release, open the app, and play and save a game without setting up a compiler. This release can ship before the AI is ready.
+## Build and verification
 
-## How to pick up the work
+From the repository root:
 
-Start with the actual snapshot and build instructions. These notes describe intent and recorded progress. The current source and fresh test results determine what is implemented. For code changes, provide commented, paste-ready files or complete sections and one build-and-test pass per batch. The project owner applies changes locally.
+```bash
+cmake -S engine -B engine/build-gui -DCMAKE_BUILD_TYPE=Debug
+cmake --build engine/build-gui --parallel
+ctest --test-dir engine/build-gui --output-on-failure
+./chess_gui
+```
 
-**Next action:** verify the CLI target is gone from CMake, update the desktop-only README if it still mentions terminal play, then do a clean configure, build, and test. After that, add the first broader rules regression tests. Update this paragraph after each milestone with what changed, which checks passed, and the next concrete task.
+Refresh this handoff and the source snapshot after each substantial milestone. Always use current source and fresh tests to decide what is implemented.

@@ -1,0 +1,5 @@
+castling_test 4 0.000155974
+draw_test 4 0.000124807
+move_count_test 4 0.0011835
+random_rules_test 1 1.70786
+---

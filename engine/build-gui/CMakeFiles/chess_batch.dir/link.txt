@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/chess_batch.dir/link.d CMakeFiles/chess_batch.dir/batch/main.cpp.o -o /mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/chess_batch  libchess_engine.a

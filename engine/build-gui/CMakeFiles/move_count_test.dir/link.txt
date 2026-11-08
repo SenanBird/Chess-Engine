@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/move_count_test.dir/link.d CMakeFiles/move_count_test.dir/tests/move_count_test.cpp.o -o move_count_test  libchess_engine.a

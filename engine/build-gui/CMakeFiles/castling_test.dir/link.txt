@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/castling_test.dir/link.d CMakeFiles/castling_test.dir/tests/castling_test.cpp.o -o castling_test  libchess_engine.a

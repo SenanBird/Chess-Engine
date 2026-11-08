@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/mnt/4tb_games/Projects/Chess_Machine/Chess-Engine/engine/build-gui/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
